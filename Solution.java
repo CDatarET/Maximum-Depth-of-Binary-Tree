@@ -14,20 +14,13 @@
  * }
  */
 class Solution {
-    public int findDepth(TreeNode root){
-        if(root == null){
-            return(0);
-        }
-        int l = findDepth(root.left);
-        int r = findDepth(root.right);
-
-        return(Math.max(l , r) + 1);
-    }
-
     public int maxDepth(TreeNode root) {
         if(root == null){
             return(0);
         }
-        return(findDepth(root));
+        int l = maxDepth(root.left);
+        int r = maxDepth(root.right);
+
+        return(Math.max(l , r) + 1);
     }
 }
